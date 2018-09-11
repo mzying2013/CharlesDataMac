@@ -7,11 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Request.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        // insert code here...
-        NSLog(@"Hello, World!");
+        [[Request new] start];
+        
+        [[NSRunLoop currentRunLoop] run];
+        
     }
     return 0;
 }

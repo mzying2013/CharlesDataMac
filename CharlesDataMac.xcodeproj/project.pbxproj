@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5A7597302147B4A200164388 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A75972F2147B4A200164388 /* main.m */; };
+		5A7597382147B9DC00164388 /* Request.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7597372147B9DC00164388 /* Request.m */; };
+		B22C7126831D496C48B74E39 /* libPods-CharlesDataMac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FB64AD3041D983690012545 /* libPods-CharlesDataMac.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,11 @@
 /* Begin PBXFileReference section */
 		5A75972C2147B4A200164388 /* CharlesDataMac */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CharlesDataMac; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A75972F2147B4A200164388 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5A7597362147B9DC00164388 /* Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Request.h; sourceTree = "<group>"; };
+		5A7597372147B9DC00164388 /* Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Request.m; sourceTree = "<group>"; };
+		7FB64AD3041D983690012545 /* libPods-CharlesDataMac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CharlesDataMac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABB5BD8C1C5D4560ED9EEE01 /* Pods-CharlesDataMac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CharlesDataMac.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CharlesDataMac/Pods-CharlesDataMac.debug.xcconfig"; sourceTree = "<group>"; };
+		E3409F6C010ADDAB5018FF83 /* Pods-CharlesDataMac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CharlesDataMac.release.xcconfig"; path = "Pods/Target Support Files/Pods-CharlesDataMac/Pods-CharlesDataMac.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B22C7126831D496C48B74E39 /* libPods-CharlesDataMac.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +51,8 @@
 			children = (
 				5A75972E2147B4A200164388 /* CharlesDataMac */,
 				5A75972D2147B4A200164388 /* Products */,
+				9D672E45B4231B9A20FD453A /* Pods */,
+				5B6A0D7CE156735A2B552872 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,9 +67,28 @@
 		5A75972E2147B4A200164388 /* CharlesDataMac */ = {
 			isa = PBXGroup;
 			children = (
+				5A7597362147B9DC00164388 /* Request.h */,
+				5A7597372147B9DC00164388 /* Request.m */,
 				5A75972F2147B4A200164388 /* main.m */,
 			);
 			path = CharlesDataMac;
+			sourceTree = "<group>";
+		};
+		5B6A0D7CE156735A2B552872 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7FB64AD3041D983690012545 /* libPods-CharlesDataMac.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9D672E45B4231B9A20FD453A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ABB5BD8C1C5D4560ED9EEE01 /* Pods-CharlesDataMac.debug.xcconfig */,
+				E3409F6C010ADDAB5018FF83 /* Pods-CharlesDataMac.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -69,6 +98,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5A7597332147B4A200164388 /* Build configuration list for PBXNativeTarget "CharlesDataMac" */;
 			buildPhases = (
+				C381670C6F72F3E3E4B9587E /* [CP] Check Pods Manifest.lock */,
 				5A7597282147B4A200164388 /* Sources */,
 				5A7597292147B4A200164388 /* Frameworks */,
 				5A75972A2147B4A200164388 /* CopyFiles */,
@@ -113,12 +143,34 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		C381670C6F72F3E3E4B9587E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CharlesDataMac-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5A7597282147B4A200164388 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				5A7597302147B4A200164388 /* main.m in Sources */,
+				5A7597382147B9DC00164388 /* Request.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +288,7 @@
 		};
 		5A7597342147B4A200164388 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ABB5BD8C1C5D4560ED9EEE01 /* Pods-CharlesDataMac.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 54DXQCSVGS;
@@ -245,6 +298,7 @@
 		};
 		5A7597352147B4A200164388 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E3409F6C010ADDAB5018FF83 /* Pods-CharlesDataMac.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 54DXQCSVGS;
